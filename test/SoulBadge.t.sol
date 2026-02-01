@@ -163,11 +163,7 @@ contract SoulBadgeTest is Test {
         soulBadge.claim(nullifier, attendee1);
         soulBadge.claim(nullifier, attendee2);
 
-        (
-            address[] memory addresses,
-            uint256[] memory tokenIds,
-            bool[] memory claimed
-        ) = soulBadge.getClaimer(nullifier);
+        (address[] memory addresses, uint256[] memory tokenIds, bool[] memory claimed) = soulBadge.getClaimer(nullifier);
 
         assertEq(addresses[0], attendee1);
         assertEq(addresses[1], attendee2);
